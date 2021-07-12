@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{% block title%} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/vendors/mdi/css/materialdesignicons.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/vendors/aos/dist/aos.css/aos.css' %}"/>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="{% static '/assets/vendors/aos/dist/aos.js/aos.js'%}"></script>
+    <script src="{% static '/assets/vendors/js/vendor.bundle.base.js'%}"></script>
+    <script src="{% static '/assets/js/jquery.easeScroll.jSRGHSs'%}"></script>
+    <script src="{% static '/assets/js/demo.js'%}"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+
+
+  </head>
+
+  
+  <body>
+    <div class="container-scroller">
+      <div class="main-panel">
+        <!-- partial:partials/_navbar.html -->
+        <header id="header">
+          <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="navbar-bottom">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                  </div>
+                  <div>
+                   
+                    <div
+                      class="navbar-collapse justify-content-center collapse"
+                      id="navbarSupportedContent"
+                    >
+                      <ul
+                        class="navbar-nav d-lg-flex justify-content-between align-items-center"
+                      >
+        
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{% url 'blog:index' %}">Document Clustering Bangla</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:viewprothomalo' %}"sr-only">প্রথম আলো সর্বশেষ</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:detail' 0 %}">আটক ও শাস্তি সম্পর্কিত</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:detail' 1 %}">অপরাধমূলক, হতাহতের ঘটনা</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:detail' 2 %}">খেলাধুলা</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:detail' 3 %}">বিনোদনমূলক, বিবিধ</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:detail' 4 %}">আইন, রাজনীতি</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blog:detail' 5 %}">সরকারি ও দাপ্তরিক</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+
+        <!-- partial -->
+        
+        
+
+
+
+
+
+
+
+
+        
+        <!-- main-panel ends -->
+        <!-- container-scroller ends -->
+
+        <!-- partial:partials/_footer.html -->
+       
+
+        <!-- partial -->
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <div class="container">
+
+      {% block body %}
+
+
+      {% endblock%}
+
+    </div>
+
+  </body>
+</html>

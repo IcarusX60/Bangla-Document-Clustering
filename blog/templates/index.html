@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title%} Document Clustering {% endblock %}
+{% block body %}
+
+
+<div class="content-wrapper">
+    <center>
+        <h3>Enter Text you want to assign to a cluster:</h3>
+    </center>
+    
+
+
+
+
+    <div class="container">
+        <center>
+            <form action="{% url 'blog:cluster' %}" method="POST">
+                <br>
+                {% csrf_token %}
+                <textarea name="text" id="text" cols="57" rows="20"></textarea>
+                <br><br>
+                <button type="submit" class="btn btn-primary" name="button">Cluster</button>
+            </form>
+        </center>
+        
+
+    </div>
+
+</div>
+<br>
+    <br>
+    <br>
+{% for cluster in clusters %}
+
+
+
+
+
+<div class="content-wrapper">
+    <div class="container">
+        <h1 class="mb-2 font-weight-600">
+            <center>
+                <a href="{% url 'blog:detail' cluster.cluster_no %}">{{cluster.news_type}}</a>
+            </center>
+        </h1>
+        <center>
+            <p>Total number of articles: {{cluster.item_count}}</p>
+        </center>
+        
+    </div>
+    {% for article in cluster.article_set.all|slice:":6"%}
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-lg-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8  grid-margin">
+                            <a href="{% url 'blog:article' article.id %}">
+                            <h2 class="mb-2 font-weight-600">
+                                {{article.headline}}
+                            </h2>
+                            </a>
+                            <div class="fs-13 mb-2">
+                              <span class="mr-2">Photo </span>10 Minutes ago
+                            </div>
+                            <p class="mb-0">
+                                {{article.content|slice:":140"}}.......
+                            </p>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+<br>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}{{cluster.news_type}}{% endblock %}
+
+{% block body %}
+<h1>{{cluster.news_type}}</h1>
+<h3>Cluster {{cluster.cluster_no|add:"1"}}</h3>
+<br>
+<h4>{{cluster.article_set.all.count}} Items</h4>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper">
+    {% for article in cluster.article_set.all%}
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-lg-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8  grid-margin">
+                            <a href="{% url 'blog:article' article.id %}">
+                            <h2 class="mb-2 font-weight-600">
+                                {{article.headline}}
+                            </h2>
+                            </a>
+                            <div class="fs-13 mb-2">
+                              <span class="mr-2">Photo </span>10 Minutes ago
+                            </div>
+                            <p class="mb-0">
+                                {{article.content|slice:":140"}}.......
+                            </p>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+{% endblock %}

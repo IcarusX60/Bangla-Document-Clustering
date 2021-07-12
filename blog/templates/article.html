@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} {{article.headline}}{% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+<div class="card-body col-lg-9">
+    
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <h1>
+                {{article.headline}}
+            </h1>
+            <br><br><br><br>
+            <p>
+                {{article.content}}
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+ 
+        <div class="row" data-aos="fade-up">
+        <h3>Similar News </h3>
+        </div>
+</div>
+
+
+{% for art in cluster.article_set.all|slice:":6" %}
+{% if art.headline != article.headline %}
+ <div class="container">
+ 
+        <div class="row" data-aos="fade-up">
+
+            <div class="col-lg-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-8  grid-margin">
+                            <a href="{% url 'blog:article' art.id %}">
+                            <h2 class="mb-2 font-weight-600">
+                                {{art.headline}}
+                            </h2>
+                            </a>
+                            <div class="fs-13 mb-2">
+                              <span class="mr-2">Photo </span>10 Minutes ago
+                            </div>
+                            <p class="mb-0">
+                                {{art.content|slice:":140"}}.......
+                            </p>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endfor %}
+
+
+
+
+
+
+{% endblock %}

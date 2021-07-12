@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} {{particle.headline}}{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<div class="card-body col-lg-9">
+    
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <h1>
+                {{particle.headline}}
+            </h1>
+            <br><br>
+            <p>
+                {{particle.content}}
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endblock %}
