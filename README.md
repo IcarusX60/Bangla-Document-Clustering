@@ -7,7 +7,8 @@
  
  
  From mysite/views.py file change the paths to the required files as per your system.
- `run python manage.py makemigrations`
+ run 
+ `python manage.py makemigrations`
  `python manage.py migrate`
  `python manage.py runserver`
  
