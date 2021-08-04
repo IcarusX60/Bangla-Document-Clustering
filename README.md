@@ -7,9 +7,9 @@
  
  
  From mysite/views.py file change the paths to the required files as per your system.
- run python manage.py makemigrations
- python manage.py migrate
- python manage.py runserver
+ `run python manage.py makemigrations`
+ `python manage.py migrate`
+ `python manage.py runserver`
  
  modify and run scraper.py file within blog folder to crawl prothom alo news using selenium and request (optional)
  
